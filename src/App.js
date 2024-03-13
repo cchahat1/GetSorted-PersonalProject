@@ -1,10 +1,15 @@
 import "./styles.css";
+import SignUp from "./components/SignUp";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import SignIn from './SignIn';
 
 export default function App() {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <Router>
+    <Switch>
+      <Route exact path="/" component={SignIn} />
+      <Route path="/signup" component={SignUp} /> {/* Define the route to your SignUp component */}
+    </Switch>
+  </Router>
   );
 }
